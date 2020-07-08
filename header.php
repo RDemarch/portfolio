@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="author" content="Robin DE MARCH">
     <title>Port Folio Robin De March</title>
-    <link rel="stylesheet" type="text/css" href="main.css">
+    <link rel="stylesheet" type="text/css" href="/portfolio/main.css">
   </head>
 
 <body>

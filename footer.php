@@ -3,12 +3,5 @@
   <p></p>
 </section>
 
-
-
-
-
-
-
-
-<script type="text/javascript" src="/PortFolio/script.js"></script>
+<script type="text/javascript" src="/portfolio/script.js"></script>
 </body>
