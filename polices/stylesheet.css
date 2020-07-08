@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'Corben';
+    src: url('Corben-Regular.eot');
+    src: url('Corben-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Corben-Regular.woff2') format('woff2'),
+        url('Corben-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Fondamento';
+    src: url('Fondamento-Regular.eot');
+    src: url('Fondamento-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Fondamento-Regular.woff2') format('woff2'),
+        url('Fondamento-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+

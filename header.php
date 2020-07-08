@@ -8,3 +8,17 @@
   </head>
 
 <body>
+
+  <header>
+    <nav>
+      <ul class="navBar">
+        <li>&#192; Propos</li>
+        <li>Projets</li>
+        <li>Articles</li>
+        <li>Contact</li>
+      </ul>
+    </nav>
+    <div class="titleHeader">
+      <h1>Port-Folio <br>Robin De March</h1>
+    </div>
+  </header>

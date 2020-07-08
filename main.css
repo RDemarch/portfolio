@@ -1,3 +1,26 @@
+@font-face {
+    font-family: 'Corben';
+    src: url('/PortFolio/polices/Corben-Regular.eot');
+    src: url('/PortFolio/polices/Corben-Regular.eot?#iefix') format('embedded-opentype'),
+        url('/PortFolio/polices/Corben-Regular.woff2') format('woff2'),
+        url('/PortFolio/polices/Corben-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Fondamento';
+    src: url('/PortFolio/polices/Fondamento-Regular.eot');
+    src: url('/PortFolio/polices/Fondamento-Regular.eot?#iefix') format('embedded-opentype'),
+        url('/PortFolio/polices/Fondamento-Regular.woff2') format('woff2'),
+        url('/PortFolio/polices/Fondamento-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
 :root {
   font-size: 20px;
 }
@@ -5,6 +28,8 @@
 body {
   padding: 0;
   margin: 0;
+  font-family: 'Corben', serif;
+  color: white;
 }
 
 h1 {
@@ -54,6 +79,7 @@ header {
   width: 100%;
   background-color: rgba(108, 12, 12, 0.5);
   z-index: 50;
+  font-family: 'Fondamento', serif;
 }
 .titleHeader h1 {
   margin: 0;
@@ -82,30 +108,54 @@ header {
   background-size: cover;
   height: 100%;
   width: 50%;
-  color: rgba(201, 9, 9, 1);
+  color: white;
 }
 
 .description {
+  width: 50%;
   padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.9);
+  border: 1px solid white;
+  border-top-right-radius: 5%;
+  border-bottom-left-radius: 5%;
+  border-top-left-radius: 10%;
+  border-bottom-right-radius: 10%;
 }
 .description p {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 .description h1{
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 #gallery {
-  position: absolute;
   overflow: hidden;
+  padding-top: 60px;
   width: 100%;
-  height: 100vh;
+  height: 920px;
   background-color: #532a2a;
 }
 
-.carouselItem img{
+#gallery .titleGallery{
   width: 100%;
-  height: 100%;
+  font-size: 3rem;
+  text-align: center;
+  font-family: 'Fondamento', serif;
+}
+
+.carousel {
+  display: inline;
+  width: 100%;
+  height: 40rem;
+}
+
+.carouselItem {
+  text-align: center;
+}
+
+.carouselItem img{
+  width: 70%;
+  height: auto;
 }
 
 .carouselItem.nonActive {
@@ -113,22 +163,22 @@ header {
   padding: 0;
   opacity: 0%;
   display: none;
-  position: absolute;
-  top: 15%;
+  position: relative;
+  top: 0px;
   left: 25%;
   width: 50%;
-  height: 75%;
+  height: auto;
 }
 .carouselItem.active {
   display: block;
   margin: 0;
   padding: 0;
   opacity: 100%;
-  position: absolute;
-  top: 15%;
+  position: relative;
+  top: 0px;
   left: 25%;
   width: 50%;
-  height: 75%;
+  height: auto;
   animation-duration: 3s;
   animation-name: slidein;
   z-index: 1;
@@ -138,18 +188,66 @@ header {
   padding: 0;
   opacity: 0;
   position: absolute;
-  top: 15%;
+  top: 142px;
   left: 25%;
   width: 50%;
-  height: 75%;
+  height: auto;
   animation-duration: 3s;
   animation-name: slideout;
   z-index: 0;
 }
 
-.carouselItem h1 {
-  margin-top: 0rem;
-  margin-left: 8rem;
+.navGallery {
+  width: 100%;
+  height: 50px;
+  text-align: center;
+}
+
+.circle {
+  display: inline-block;
+  position: relative;
+  z-index: 50;
+  background-color: white;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+.circle:hover {
+  background-color: #565353;
+}
+.circle.active {
+  background-color: #565353;
+}
+
+#footer {
+  padding-top: 60px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  height: 360px;
+  width: 100%;
+  background-color: #E66E6E;
+}
+
+.gitLogo {
+  display: block;
+  width: 40px;
+  height: 40px;
+  background-image: url('/PortFolio/images/github.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: rgba(0, 0, 0, 0);
+}
+.gitLogo:hover {
+  width: 40px;
+  height: 40px;
+  background-image: url('/PortFolio/images/githubWhite.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: rgba(0, 0, 0, 0);
 }
 
 @keyframes slidein {
@@ -173,6 +271,7 @@ header {
     display: block;
   }
   to {
+    display: none;
     opacity: 0%;
     left: 0%;
   }

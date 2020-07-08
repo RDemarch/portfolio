@@ -1,4 +1,5 @@
 let carousel = document.getElementsByClassName('carouselItem');
+let circleNav = document.getElementsByClassName('circle');
 let imgBg = [];
 let itmCarousel = 4;
 let items = "";
@@ -17,24 +18,29 @@ setInterval(function (){
     carousel[maxItem - 1].classList.replace('active', 'goLeft');
     carousel[maxItem - 2].classList.replace('goLeft', 'nonActive');
     carousel[numItem].classList.replace('nonActive', 'active');
+    circleNav[numItem].classList.add('active');
+    circleNav[maxItem - 1].classList.remove('active');
   }
   else if (numItem == 1) {
     carousel[numItem - 1].classList.replace('active', 'goLeft');
     carousel[maxItem - 1].classList.replace('goLeft', 'nonActive');
     carousel[numItem].classList.replace('nonActive', 'active');
+    circleNav[numItem - 1].classList.remove('active');
+    circleNav[numItem].classList.add('active');
   }
   else if (numItem == maxItem) {
     carousel[numItem - 1].classList.replace('active', 'goLeft');
     carousel[numItem - 2].classList.replace('goLeft', 'nonActive');
     carousel[0].classList.replace('nonActive', 'active');
+    circleNav[numItem - 1].classList.remove('active');
+    circleNav[0].classList.add('active');
   }
   else {
-    console.log('bite');
-    console.log(numItem);
-    console.log(carousel.length);
     carousel[numItem - 1].classList.replace('active', 'goLeft');
     carousel[numItem - 2].classList.replace('goLeft', 'nonActive');
     carousel[numItem].classList.replace('nonActive', 'active');
+    circleNav[numItem - 1].classList.remove('active');
+    circleNav[numItem].classList.add('active');
   }
   numItem++
 }, 7500);

@@ -1,19 +1,5 @@
 <?php include "header.php";?>
 
-<header>
-  <nav>
-    <ul class="navBar">
-      <li>&#192; Propos</li>
-      <li>Projets</li>
-      <li>Articles</li>
-      <li>Contact</li>
-    </ul>
-  </nav>
-  <div class="titleHeader">
-    <h1>Port-Folio <br>Robin De March</h1>
-  </div>
-</header>
-
 <section id="about">
   <article class="descritpionBox">
     <div class="description">
@@ -43,13 +29,22 @@
 </section>
 
 <section id="gallery">
-  <h1>Différents Projets</h1>
-  <div class="carouselItem active"><h1>Intégration Bootstrap</h1><img src="/PortFolio/images/projet0"></div>
-  <div class="carouselItem nonActive"><h1>Remplacement Bootstrap par HTML/CSS</h1><img src="/PortFolio/images/projet1"></div>
-  <div class="carouselItem nonActive"><h1>Chat en PHP/MYSQL</h1><img src="/PortFolio/images/projet2"></div>
-  <div class="carouselItem nonActive"><h1>Bomberman en JAVASCRIPT</h1><img src="/PortFolio/images/projet3"></div>
+  <h1 class="titleGallery">Différents Projets</h1>
+  <div class="carousel">
+    <div class="carouselItem active"><h1>Intégration Bootstrap</h1><img src="/PortFolio/images/projet0"></div>
+    <div class="carouselItem nonActive"><h1>Remplacement Bootstrap par HTML/CSS</h1><img src="/PortFolio/images/projet1"></div>
+    <div class="carouselItem nonActive"><h1>Chat en PHP/MYSQL</h1><img src="/PortFolio/images/projet2"></div>
+    <div class="carouselItem nonActive"><h1>Bomberman en JAVASCRIPT</h1><img src="/PortFolio/images/projet3"></div>
+  </div>
+  <div class="navGallery">
+    <div class="arrowLeft"></div>
+    <div class="circle active"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="arrowRight"></div>
+  </div>
 </section>
 
 
-
-<script type="text/javascript" src="/PortFolio/script.js"></script>
+<?php include "footer.php"; ?>
