@@ -31,19 +31,20 @@
 <section id="gallery">
   <h1 class="titleGallery">Différents Projets</h1>
   <div class="carousel">
-    <div class="carouselItem active"><h1>Intégration Bootstrap</h1><img src="/portfolio/images/projet0"></div>
-    <div class="carouselItem nonActive"><h1>Remplacement Bootstrap par HTML/CSS</h1><img src="/portfolio/images/projet1"></div>
-    <div class="carouselItem nonActive"><h1>Chat en PHP/MYSQL</h1><img src="/portfolio/images/projet2"></div>
-    <div class="carouselItem nonActive"><h1>Bomberman en JAVASCRIPT</h1><img src="/portfolio/images/projet3"></div>
+    <div class="carouselItem active"><h1>Intégration Bootstrap</h1><img src="/portfolio/images/projet0.PNG"></div>
+    <div class="carouselItem nonActive"><h1>Remplacement Bootstrap par HTML/CSS</h1><img src="/portfolio/images/projet1.PNG"></div>
+    <div class="carouselItem nonActive"><h1>Chat en PHP/MYSQL</h1><img src="/portfolio/images/projet2.PNG"></div>
+    <div class="carouselItem nonActive"><h1>Bomberman en JAVASCRIPT</h1><img src="/portfolio/images/projet3.PNG"></div>
+    <div class="navGallery">
+      <div class="arrowLeft"></div>
+      <div class="circle active"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="arrowRight"></div>
+    </div>
   </div>
-  <div class="navGallery">
-    <div class="arrowLeft"></div>
-    <div class="circle active"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="arrowRight"></div>
-  </div>
+
 </section>
 
 

@@ -133,7 +133,7 @@ header {
   overflow: hidden;
   padding-top: 60px;
   width: 100%;
-  height: 920px;
+  height: 70vh;
   background-color: #532a2a;
 }
 
@@ -147,19 +147,21 @@ header {
 .carousel {
   display: inline;
   overflow: hidden;
-  position: relative;
+  position: absolute;
   width: 100%;
-  height: 40rem;
+  height: 50vh;
 }
 
 .carouselItem {
+  width: 50%;
+  height: auto;
   text-align: center;
   position: absolute;
 }
 
 .carouselItem img{
-  width: 70%;
-  height: auto;
+  height: 25vh;
+  object-fit: cover;
 }
 
 .carouselItem.nonActive {
@@ -179,8 +181,6 @@ header {
   opacity: 100%;
   top: 0px;
   left: 25%;
-  width: 50%;
-  height: auto;
   animation-duration: 3s;
   animation-name: slidein;
   z-index: 2;
@@ -191,8 +191,6 @@ header {
   opacity: 0;
   top: 0px;
   left: 25%;
-  width: 50%;
-  height: auto;
   animation-duration: 3s;
   animation-name: slideout;
   z-index: 1;
@@ -202,6 +200,8 @@ header {
   width: 100%;
   height: 50px;
   text-align: center;
+  position: absolute;
+  bottom: 0;
 }
 
 .circle {
