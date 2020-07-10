@@ -12,6 +12,12 @@ for (i = 0; i < carousel.length; i++) {
   maxItem ++
 }
 
+carousel[0].classList.add('active');
+for (i = 1; i < carousel.length; i++) {
+  carousel[i].classList.add('nonActive');
+}
+circleNav[0].classList.add('active');
+
 setInterval(function (){
   if (numItem >= maxItem) numItem = 0;
   if (numItem == 0) {
