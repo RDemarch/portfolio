@@ -5,14 +5,14 @@ $choix = $_POST['choix'];
 if ($choix == "Créer un Artcile") {
 
   $name = $_POST['name'];
-  $titre = $_POST['titre'];
+  $title = $_POST['title'];
   $contenu = $_POST['contenu'];
   $imageAssocie = $_POST['imageAssocie'];
 
-  $requete = $bdd->prepare('INSERT INTO article(name, titre, contenu, imageAssocie) VALUES (:name, :titre, :contenu, :imageAssocie)');
+  $requete = $bdd->prepare('INSERT INTO article(name, title, contenu, imageAssocie) VALUES (:name, :title, :contenu, :imageAssocie)');
   $requete->execute(array(
             'name' => $name,
-            'titre' => $titre,
+            'title' => $title,
             'contenu' => $contenu,
             'imageAssocie' => $imageAssocie));
   }

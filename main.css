@@ -285,6 +285,15 @@ h1 {
   color: black;
 }
 
+.editUpdate {
+  font-size: 15px;
+  margin: 25px;
+}
+.editUpdate td{
+  padding-top: 50px;
+  text-align: center;
+}
+
 @keyframes slidein {
   from {
     opacity: 0%;
