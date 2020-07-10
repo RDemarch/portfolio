@@ -6,7 +6,7 @@
   <input class="text" type="text" name="linkImage" value="Lien de l'image associée au projet" required>
   <input class="text" type="text" name="linkProjet" value="Lien du Projet" required>
   <input class="text" type="text" name="linkAbout" value="Lien de la page du portfolio pour le projet" required>
-  <input class="text" type="text" name="description" value="Description du projet" required>
+  <textarea name="description" rows="10" cols="40" required>Description du projet</textarea>
   <input type="submit" name="" value="Envoyer">
 </form>
 <form class="edit" action="edit.php" method="post">

@@ -54,6 +54,10 @@
       <input type="submit" name="choix" value="Modifier un Projet" required>
       <input type="submit" name="choix" value="Créer un Projet" required>
     </form>
+    <form class="edit" action="index.php" method="post">
+      <input type="submit" name="" value="Retour">
+    </form>
+
   <?php
     }
 
@@ -69,5 +73,7 @@
   if ($choix == "Modifier un Projet") {
     include "formUpdateProjet.php";
   }
+
+
 
  ?>
