@@ -27,7 +27,7 @@
     echo "</pre>";
   }
 ?>
-  <header>
+  <header class="headerAbout">
     <nav>
       <ul class="navBar">
         <li>&#192; Propos</li>
