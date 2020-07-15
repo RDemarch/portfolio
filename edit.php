@@ -49,8 +49,8 @@
   if ($choix == NULL) {
     ?>
     <form class="edit" action="edit.php" method="get">
-      <input type="submit" name="choix" value="Modifier un Artcile" required>
-      <input type="submit" name="choix" value="Créer un Artcile" required>
+      <input type="submit" name="choix" value="Modifier un Article" required>
+      <input type="submit" name="choix" value="Créer un Article" required>
       <input type="submit" name="choix" value="Modifier un Projet" required>
       <input type="submit" name="choix" value="Créer un Projet" required>
     </form>
@@ -61,13 +61,13 @@
   <?php
     }
 
-  if ($choix == "Créer un Artcile") {
+  if ($choix == "Créer un Article") {
     include "formInsertArticle.php";
   }
   if ($choix == "Créer un Projet") {
     include "formInsertProjet.php";
   }
-  if ($choix == "Modifier un Artcile") {
+  if ($choix == "Modifier un Article") {
     include "formUpdateArticle.php";
   }
   if ($choix == "Modifier un Projet") {

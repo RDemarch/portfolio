@@ -1,8 +1,26 @@
-<?php include "header.php";
+<?php
+try
+{
+  // On se connecte à MySQL
+  $bdd = new PDO('mysql:host=localhost;dbname=portfolio;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+}
+catch(Exception $e)
+{
+  // En cas d'erreur, on affiche un message et on arrête tout
+        die('Erreur : '.$e->getMessage());
+}
+
+function debug($var, $style = "")
+{
+  echo "<pre style='background-color: white; border: gray 1px solid; -webkit-border-radius: 5px;-moz-border-radius: 5px;border-radius: 5px; color: black; width: 95%; padding: 10px; overflow-y: auto;{$style}'>";
+  var_dump($var);
+  echo "</pre>";
+}
 
 $choix = $_POST['choix'];
+echo $choix;
 
-if ($choix == "Créer un Artcile") {
+if ($choix == "Créer un Article") {
 
   $name = $_POST['name'];
   $title = $_POST['title'];
@@ -16,6 +34,21 @@ if ($choix == "Créer un Artcile") {
             'contenu' => $contenu,
             'imageAssocie' => $imageAssocie));
   }
+
+if ($choix == "Modifier un Article") {
+  $id = $_POST['id'];
+  $name = $_POST['name'];
+  $title = $_POST['title'];
+  $contenu = $_POST['contenu'];
+  $imageAssocie = $_POST['imageAssocie'];
+
+
+  $sql = 'UPDATE article SET name = "' . $name . '", title = "' . $title . '", imageAssocie = "' . $imageAssocie . '", contenu = "' . $contenu . '" WHERE id = "' . $id . '"';
+  echo $sql;
+  $requete = $bdd->prepare($sql);
+  $requete->execute();
+  die();
+}
 
 if ($choix == "Créer un Projet") {
 
@@ -38,6 +71,6 @@ if ($choix == "Créer un Projet") {
             'description' => $description));
   }
 
-header('Location: edit.php');
+
 
 ?>

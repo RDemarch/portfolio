@@ -1,6 +1,6 @@
 <?php include "header.php";
 
-  $article = $bdd->query('SELECT titre, contenu, imageAssocie FROM article WHERE name = "Robin De March"');
+  $article = $bdd->query('SELECT title, contenu, imageAssocie FROM article WHERE name = "Robin De March"');
   $projet = $bdd->query('SELECT name, linkImage FROM projet');
   $cnt = 0;
   $i = 0;
@@ -9,7 +9,7 @@
   <section id="about">
     <article class="descritpionBox">
       <div class="description">
-        <h1><?= $donnees['titre'] ?></h1>
+        <h1><?= $donnees['title'] ?></h1>
         <p><?= $donnees['contenu'] ?></p>
       </div>
     </article>
