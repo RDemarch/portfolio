@@ -18,14 +18,13 @@ function debug($var, $style = "")
 }
 
 $choix = $_POST['choix'];
-echo $choix;
 
 if ($choix == "Créer un Article") {
 
-  $name = $_POST['name'];
-  $title = $_POST['title'];
-  $contenu = $_POST['contenu'];
-  $imageAssocie = $_POST['imageAssocie'];
+  $name = htmlentities($_POST['name']);
+  $title = htmlentities($_POST['title']);
+  $contenu = htmlentities($_POST['contenu']);
+  $imageAssocie = htmlentities($_POST['imageAssocie']);
 
   $requete = $bdd->prepare('INSERT INTO article(name, title, contenu, imageAssocie) VALUES (:name, :title, :contenu, :imageAssocie)');
   $requete->execute(array(
@@ -36,29 +35,27 @@ if ($choix == "Créer un Article") {
   }
 
 if ($choix == "Modifier un Article") {
-  $id = $_POST['id'];
-  $name = $_POST['name'];
-  $title = $_POST['title'];
-  $contenu = $_POST['contenu'];
-  $imageAssocie = $_POST['imageAssocie'];
+  $id = htmlentities($_POST['id']);
+  $name = htmlentities($_POST['name']);
+  $title = htmlentities($_POST['title']);
+  $contenu = htmlentities($_POST['contenu']);
+  $imageAssocie = htmlentities($_POST['imageAssocie']);
 
 
   $sql = 'UPDATE article SET name = "' . $name . '", title = "' . $title . '", imageAssocie = "' . $imageAssocie . '", contenu = "' . $contenu . '" WHERE id = "' . $id . '"';
-  echo $sql;
   $requete = $bdd->prepare($sql);
   $requete->execute();
-  die();
 }
 
 if ($choix == "Créer un Projet") {
 
-  $name = $_POST['name'];
-  $date = $_POST['date'];
-  $language = $_POST['language'];
-  $linkImage = $_POST['linkImage'];
-  $linkProjet = $_POST['linkProjet'];
-  $linkAbout = $_POST['linkAbout'];
-  $description = $_POST['description'];
+  $name = htmlentities($_POST['name']);
+  $date = htmlentities($_POST['date']);
+  $language = htmlentities($_POST['language']);
+  $linkImage = htmlentities($_POST['linkImage']);
+  $linkProjet = htmlentities($_POST['linkProjet']);
+  $linkAbout = htmlentities($_POST['linkAbout']);
+  $description = htmlentities($_POST['description']);
 
   $requete = $bdd->prepare('INSERT INTO projet(name, date, language, linkImage, linkProjet, linkAbout, description) VALUES (:name, :date, :language, :linkImage, :linkProjet, :linkAbout, :description)');
   $requete->execute(array(
@@ -70,7 +67,22 @@ if ($choix == "Créer un Projet") {
             'linkAbout' => $linkAbout,
             'description' => $description));
   }
+  if ($choix == "Modifier un Projet") {
 
+    $id = htmlentities($_POST['id']);
+    $name = htmlentities($_POST['name']);
+    $date = htmlentities($_POST['date']);
+    $language = htmlentities($_POST['language']);
+    $linkImage = htmlentities($_POST['linkImage']);
+    $linkProjet = htmlentities($_POST['linkProjet']);
+    $linkAbout = htmlentities($_POST['linkAbout']);
+    $description = htmlentities($_POST['description']);
 
+    $sql = 'UPDATE projet SET name = "' . $name . '", date = "' . $date . '", language = "' . $language . '", linkImage = "' . $linkImage . '", linkProjet = "' . $linkProjet . '", linkAbout = "' . $linkAbout . '", description = "' . $description . '" WHERE id = "' . $id . '"';
+    $requete = $bdd->prepare($sql);
+    $requete->execute();
+    }
+
+header('Location: edit.php');
 
 ?>

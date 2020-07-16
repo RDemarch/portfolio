@@ -1,5 +1,5 @@
 <form class="edit" action="edit_post.php" method="post">
-  <input type="hidden" name="choix" value="<?= $_GET['choix']; ?>">
+  <input type="hidden" name="choix" value="<?= htmlentities($_GET['choix']); ?>">
   <input class="text" type="text" name="name" value="Nom du projet" required>
   <input class="text" type="text" name="date" value="Date de création au format AAAA-MM-DD" required>
   <input class="text" type="text" name="language" value="Langage(s) utilisé(s)" required>

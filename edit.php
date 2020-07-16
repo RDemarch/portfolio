@@ -44,7 +44,7 @@
   $choix = NULL;
   }
   else {
-    $choix = $_GET['choix'];
+    $choix = htmlentities($_GET['choix']);
   }
   if ($choix == NULL) {
     ?>
