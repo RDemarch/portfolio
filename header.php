@@ -31,8 +31,8 @@
     <nav>
       <ul class="navBar">
         <li>&#192; Propos</li>
-        <li>Projets</li>
-        <li>Articles</li>
+        <li class="scrollingMenu">Projets</li>
+        <li class="scrollingMenu">Articles</li>
         <li>Contact</li>
       </ul>
     </nav>

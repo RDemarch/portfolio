@@ -1,38 +1,17 @@
 <?php
 
-if (!isset($_GET['choiceArt'])) {
-  $choiceArt = NULL;
-}
-else {
-  $choiceArt = $_GET['choiceArt'];
-}
+$id = htmlentities($_GET['id']);
 
+$donnees = $bdd->query('SELECT * FROM article WHERE id = "' . $id . '"');
 
-if ($choiceArt == NULL) {
-?>
-  <form class="edit" action="edit.php" method="get">
-    <input class="text" type="hidden" name="choix" value="<?= $_GET['choix']; ?>">
-
-<?php
-
-  $donnees = $bdd->query('SELECT * FROM article');
-
-  while ($formArticle = $donnees->fetch()) {
-    echo  "<input type=\"submit\" name=\"choiceArt\" value=\"" . $formArticle['name'] . "\">";
-  }
-  echo '</form>';
-}
-
-else {
-
-$donnees = $bdd->query('SELECT * FROM article WHERE name = "' . $choiceArt . '"');
 
 while ($formArticle = $donnees->fetch()) {
   // code...
 ?>
   <form class="" action="edit_post.php" method="post">
     <input class="text" type="hidden" name="choix" value="<?= $_GET['choix']; ?>">
-    <input class="text" type="hidden" name="id" value="<?= $formArticle['id']; ?>">
+    <input class="text" type="hidden" name="action" value="<?= $_GET['action']; ?>">
+    <input class="text" type="hidden" name="id" value="<?= $id; ?>">
     <input class="text" type="text" name="name" value="<?= $formArticle['name']; ?>">
     <input class="text" type="text" name="title" value="<?= $formArticle['title']; ?>" required>
     <input class="text" type="text" name="imageAssocie" value="<?= $formArticle['imageAssocie']; ?>" required>
@@ -42,7 +21,7 @@ while ($formArticle = $donnees->fetch()) {
 
 <?php
   }
-}
+
 
 ?>
 
