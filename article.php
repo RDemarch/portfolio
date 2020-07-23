@@ -11,7 +11,7 @@
 
 ?>
 
-
+<button type="button" name="button"><a href="edit.php?choix=<?= htmlentities($choix) ?>&action=Creer">Créer</a></button>
 <table>
   <thead>
     <th>id</th>
@@ -48,6 +48,9 @@ $donnees = $bdd->query('SELECT * FROM article');
   <?php
     }
 
-    if ($action == "Modifier") {
+    if ($action == "Modifier" && $choix == "Article") {
       include "formUpdateArticle.php";
+    }
+    if ($action == "Creer" && $choix == "Article") {
+      include "formInsertArticle.php";
     }

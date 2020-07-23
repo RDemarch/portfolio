@@ -25,7 +25,7 @@ if (isset($_GET['choix']) && isset($_GET['action'])) {
   $action = $_GET['action'];
 }
 
-if ($action == "Créer" && $choix == "Article") {
+if ($action == "Creer" && $choix == "Article") {
 
   $name = htmlentities($_POST['name']);
   $title = htmlentities($_POST['title']);
@@ -62,7 +62,7 @@ if ($action == "Supprimer" && $choix == "Article") {
   $requete->execute();
 }
 
-if ($action == "Créer" && $choix == "Projet") {
+if ($action == "Creer" && $choix == "Projet") {
 
   $name = htmlentities($_POST['name']);
   $date = htmlentities($_POST['date']);

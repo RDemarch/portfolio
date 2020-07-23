@@ -11,7 +11,7 @@
 
 ?>
 
-
+<button type="button" name="button"><a href="edit.php?choix=<?= htmlentities($choix) ?>&action=Creer">Créer</a></button>
 <table>
   <thead>
     <th>id</th>
@@ -49,6 +49,9 @@ $donnees = $bdd->query('SELECT * FROM projet');
   <?php
     }
 
-    if ($action == "Modifier") {
+    if ($action == "Modifier" && $choix == "Projet") {
       include "formUpdateProjet.php";
+    }
+    if ($action == "Creer" && $choix == "Projet") {
+      include "formInsertProjet.php";
     }
