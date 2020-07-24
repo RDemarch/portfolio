@@ -1,27 +1,28 @@
 <?php include "header.php";
 
-  if (!isset($_GET['title'])) {
-    $title = "À propos de moi";
+  if (!isset($_GET['name'])) {
+    $name = NULL;
   }
   else {
-    $title = $_GET['title'];
+    $name = htmlentities($_GET['name']);
   }
 
-  $article = $bdd->query('SELECT title, contenu, imageAssocie FROM article WHERE title = "' . $title . '"');
-  $projet = $bdd->query('SELECT name, linkImage FROM projet');
+if ($name != NULL) {
+
+  $projet = $bdd->query('SELECT * FROM projet WHERE name ="' . $name . '" ');
   $cnt = 0;
   $i = 0;
-  while ($donnees = $article->fetch()){
+  while ($donnees = $projet->fetch()){
     ?>
   <section id="about">
     <article class="descritpionBox">
       <div class="description">
-        <h1><?= $donnees['title'] ?></h1>
-        <p><?= $donnees['contenu'] ?></p>
+        <h1><?= $donnees['name'] ?></h1>
+        <p><?= $donnees['description'] ?></p>
       </div>
     </article>
     <div class="imageAbout">
-    <img src="/portfolio<?= $donnees['imageAssocie'] ?>">
+    <img src="/portfolio<?= $donnees['linkImage'] ?>">
     </div>
   </section>
   <?php
@@ -32,6 +33,7 @@
     <div id="carouselExampleCaptions" class="carousel slide w-50 m-auto" data-ride="carousel">
       <ol class="carousel-indicators">
     <?php
+      $projet = $bdd->query('SELECT * FROM projet');
       while ($donnees = $projet->fetch()){
     ?>
         <li data-target="#carouselExampleCaptions" data-slide-to="<?= $cnt ?>" class="carouselIndicator"></li>
@@ -58,6 +60,11 @@
   </div>
   </div>
   </section>
+  <?php
+    }
 
+else {
+  echo "Error 404: Not Found";
+}
 
- <?php include "footer.php"; ?>
+include "footer.php"; ?>
