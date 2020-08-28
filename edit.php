@@ -40,13 +40,14 @@
 </header>
 
 <?php
-  if (!isset($_GET['choix'])) {
+  if (!isset($_GET['choix']) || isset($_POST['back'])) {
   $choix = NULL;
   }
   else {
     $choix = htmlentities($_GET['choix']);
   }
   if ($choix == NULL) {
+<<<<<<< HEAD
     ?>
     <form class="edit" action="edit.php" method="get">
       <input type="submit" name="choix" value="<?=htmlentities('Modifier un Article');?>" required>
@@ -57,21 +58,25 @@
     <form class="edit" action="index.php" method="post">
       <input type="submit" name="" value="Retour">
     </form>
+=======
+      ?>
+      <form class="" action="edit.php" method="get">
+        <input type="submit" name="choix" value="Projet" required>
+        <input type="submit" name="choix" value="Article" required>
+      </form>
+      <form class="" action="index.php" method="post">
+        <input type="submit" name="" value="Retour">
+      </form>
+>>>>>>> 409045204b7ee441b6fc7af35156ebe28feec175
 
   <?php
     }
 
-  if ($choix == "Créer un Article") {
-    include "formInsertArticle.php";
+  if ($choix == "Article") {
+    include "article.php";
   }
-  if ($choix == "Créer un Projet") {
-    include "formInsertProjet.php";
-  }
-  if ($choix == "Modifier un Article") {
-    include "formUpdateArticle.php";
-  }
-  if ($choix == "Modifier un Projet") {
-    include "formUpdateProjet.php";
+  if ($choix == "Projet") {
+    include "projet.php";
   }
 
 

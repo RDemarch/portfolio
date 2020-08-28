@@ -16,10 +16,16 @@ function debug($var, $style = "")
   var_dump($var);
   echo "</pre>";
 }
+if (isset($_POST['choix']) && isset($_POST['action'])) {
+  $choix = $_POST['choix'];
+  $action = $_POST['action'];
+}
+if (isset($_GET['choix']) && isset($_GET['action'])) {
+  $choix = $_GET['choix'];
+  $action = $_GET['action'];
+}
 
-$choix = $_POST['choix'];
-
-if ($choix == "Créer un Article") {
+if ($action == "Creer" && $choix == "Article") {
 
   $name = htmlentities($_POST['name']);
   $title = htmlentities($_POST['title']);
@@ -32,22 +38,31 @@ if ($choix == "Créer un Article") {
             'title' => $title,
             'contenu' => $contenu,
             'imageAssocie' => $imageAssocie));
-  }
+}
 
-if ($choix == "Modifier un Article") {
+if ($action == "Modifier" && $choix == "Article") {
+
   $id = htmlentities($_POST['id']);
   $name = htmlentities($_POST['name']);
   $title = htmlentities($_POST['title']);
   $contenu = htmlentities($_POST['contenu']);
   $imageAssocie = htmlentities($_POST['imageAssocie']);
 
-
   $sql = 'UPDATE article SET name = "' . $name . '", title = "' . $title . '", imageAssocie = "' . $imageAssocie . '", contenu = "' . $contenu . '" WHERE id = "' . $id . '"';
   $requete = $bdd->prepare($sql);
   $requete->execute();
 }
 
-if ($choix == "Créer un Projet") {
+if ($action == "Supprimer" && $choix == "Article") {
+
+  $id = htmlentities($_GET['id']);
+
+  $sql = 'DELETE FROM article WHERE id = "' . $id . '"';
+  $requete = $bdd->prepare($sql);
+  $requete->execute();
+}
+
+if ($action == "Creer" && $choix == "Projet") {
 
   $name = htmlentities($_POST['name']);
   $date = htmlentities($_POST['date']);
@@ -66,8 +81,9 @@ if ($choix == "Créer un Projet") {
             'linkProjet' => $linkProjet,
             'linkAbout' => $linkAbout,
             'description' => $description));
-  }
-  if ($choix == "Modifier un Projet") {
+}
+
+  if ($action == "Modifier" && $choix == "Projet") {
 
     $id = htmlentities($_POST['id']);
     $name = htmlentities($_POST['name']);
@@ -81,7 +97,16 @@ if ($choix == "Créer un Projet") {
     $sql = 'UPDATE projet SET name = "' . $name . '", date = "' . $date . '", language = "' . $language . '", linkImage = "' . $linkImage . '", linkProjet = "' . $linkProjet . '", linkAbout = "' . $linkAbout . '", description = "' . $description . '" WHERE id = "' . $id . '"';
     $requete = $bdd->prepare($sql);
     $requete->execute();
-    }
+}
+
+  if ($action == "Supprimer" && $choix == "Projet") {
+
+    $id = htmlentities($_GET['id']);
+
+    $sql = 'DELETE FROM projet WHERE id = "' . $id . '"';
+    $requete = $bdd->prepare($sql);
+    $requete->execute();
+}
 
 header('Location: edit.php');
 
