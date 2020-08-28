@@ -315,31 +315,3 @@ h1 {
   padding-top: 50px;
   text-align: center;
 }
-
-/* @keyframes slidein {
-  from {
-    opacity: 0%;
-    left: 75%;
-  }
-
-  to {
-    opacity: 100%;
-    left: 25%;
-  }
-}
-
-@keyframes slideout {
-  from {
-    display: block;
-    opacity: 100%;
-    left: 25%;
-  }
-  90% {
-    display: block;
-  }
-  to {
-    display: none;
-    opacity: 0%;
-    left: 0%;
-  }
-} */
