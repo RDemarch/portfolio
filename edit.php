@@ -49,10 +49,10 @@
   if ($choix == NULL) {
     ?>
     <form class="edit" action="edit.php" method="get">
-      <input type="submit" name="choix" value="Modifier un Article" required>
-      <input type="submit" name="choix" value="Créer un Article" required>
-      <input type="submit" name="choix" value="Modifier un Projet" required>
-      <input type="submit" name="choix" value="Créer un Projet" required>
+      <input type="submit" name="choix" value="<?=htmlentities('Modifier un Article');?>" required>
+      <input type="submit" name="choix" value="<?=htmlentities('Créer un Article');?>" required>
+      <input type="submit" name="choix" value="<?=htmlentities('Modifier un Projet');?>" required>
+      <input type="submit" name="choix" value="<?=htmlentities('Créer un Projet');?>" required>
     </form>
     <form class="edit" action="index.php" method="post">
       <input type="submit" name="" value="Retour">
@@ -77,3 +77,6 @@
 
 
  ?>
+
+</body>
+</html>

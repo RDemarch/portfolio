@@ -1,7 +1,5 @@
 let carousel = document.getElementsByClassName('carouselItem');
 let circleNav = document.getElementsByClassName('circle');
-let imgBg = [];
-let itmCarousel = 4;
 let items = "";
 let numItem = 1;
 let maxItem = 0;
