@@ -113,7 +113,12 @@ h1 {
 }
 #about .imageAbout {
   width: 50%;
+  max-width: 480px;
   height: auto;
+}
+#about .imageAboutProjet {
+  width: auto;
+  height: 50%;
 }
 #about img{
   object-fit: cover;

@@ -10,7 +10,7 @@ require('navBar.php');
       </div>
     </article>
     <div class="boxImageAbout">
-    <img class ="imageAbout" src="/portfolio/view<?= $projet['linkImage'] ?>">
+    <img class ="imageAboutProjet" src="/portfolio/view<?= $projet['linkImage'] ?>">
     </div>
   </section>
 
