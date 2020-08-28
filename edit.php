@@ -47,18 +47,6 @@
     $choix = htmlentities($_GET['choix']);
   }
   if ($choix == NULL) {
-<<<<<<< HEAD
-    ?>
-    <form class="edit" action="edit.php" method="get">
-      <input type="submit" name="choix" value="<?=htmlentities('Modifier un Article');?>" required>
-      <input type="submit" name="choix" value="<?=htmlentities('Créer un Article');?>" required>
-      <input type="submit" name="choix" value="<?=htmlentities('Modifier un Projet');?>" required>
-      <input type="submit" name="choix" value="<?=htmlentities('Créer un Projet');?>" required>
-    </form>
-    <form class="edit" action="index.php" method="post">
-      <input type="submit" name="" value="Retour">
-    </form>
-=======
       ?>
       <form class="" action="edit.php" method="get">
         <input type="submit" name="choix" value="Projet" required>
@@ -67,7 +55,6 @@
       <form class="" action="index.php" method="post">
         <input type="submit" name="" value="Retour">
       </form>
->>>>>>> 409045204b7ee441b6fc7af35156ebe28feec175
 
   <?php
     }

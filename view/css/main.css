@@ -1,9 +1,9 @@
 @font-face {
     font-family: 'Corben';
-    src: url('/portfolio/polices/Corben-Regular.eot');
-    src: url('/portfolio/polices/Corben-Regular.eot?#iefix') format('embedded-opentype'),
-        url('/portfolio/polices/Corben-Regular.woff2') format('woff2'),
-        url('/portfolio/polices/Corben-Regular.woff') format('woff');
+    src: url('/portfolio/view/css/polices/Corben-Regular.eot');
+    src: url('/portfolio/view/css/polices/Corben-Regular.eot?#iefix') format('embedded-opentype'),
+        url('/portfolio/view/css/polices/Corben-Regular.woff2') format('woff2'),
+        url('/portfolio/view/css/polices/Corben-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -11,10 +11,10 @@
 
 @font-face {
     font-family: 'Fondamento';
-    src: url('/portfolio/polices/Fondamento-Regular.eot');
-    src: url('/portfolio/polices/Fondamento-Regular.eot?#iefix') format('embedded-opentype'),
-        url('/portfolio/polices/Fondamento-Regular.woff2') format('woff2'),
-        url('/portfolio/polices/Fondamento-Regular.woff') format('woff');
+    src: url('/portfolio/view/css/polices/Fondamento-Regular.eot');
+    src: url('/portfolio/view/css/polices/Fondamento-Regular.eot?#iefix') format('embedded-opentype'),
+        url('/portfolio/view/css/polices/Fondamento-Regular.woff2') format('woff2'),
+        url('/portfolio/view/css/polices/Fondamento-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -40,7 +40,7 @@ h1 {
 .headerAbout{
   width: 100%;
   height: 640px;
-  background-image: url('/portfolio/images/bgHeader.jpg');
+  background-image: url('/portfolio/view/images/bgHeader.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -78,7 +78,6 @@ h1 {
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  position: absolute;
   left: 0;
   top: 0;
   height: 640px;
@@ -101,13 +100,18 @@ h1 {
   background-color: #595858;
   width: 100%;
   height: auto;
+  min-height: 640px;
 }
 
-#about .imageAbout {
+#about .boxImageAbout {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 50%;
+  height: auto;
+}
+#about .imageAbout {
   width: 50%;
   height: auto;
 }
@@ -123,13 +127,14 @@ h1 {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  background-image: url('/portfolio/images/bgAbout.jpg');
+  background-image: url('/portfolio/view/images/bgAbout.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   height: auto;
   width: 50%;
   color: white;
+
 }
 
 .description {
@@ -146,10 +151,10 @@ h1 {
   border-bottom-right-radius: 10%;
 }
 .description p {
-  font-size: 1.0rem;
+  font-size: 1.5rem;
 }
 .description h1{
-  font-size: 2rem;
+  font-size: 3rem;
 }
 
 #gallery {
@@ -264,7 +269,7 @@ h1 {
   display: block;
   width: 40px;
   height: 40px;
-  background-image: url('/portfolio/images/github.png');
+  background-image: url('/portfolio/view/images/github.png');
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
@@ -273,7 +278,7 @@ h1 {
 .gitLogo:hover {
   width: 40px;
   height: 40px;
-  background-image: url('/portfolio/images/githubWhite.png');
+  background-image: url('/portfolio/view/images/githubWhite.png');
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
