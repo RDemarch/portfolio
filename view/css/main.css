@@ -106,6 +106,7 @@ h1 {
 #about .boxImageAbout {
   position: relative;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 50%;
@@ -118,6 +119,7 @@ h1 {
 }
 #about .imageAboutProjet {
   width: auto;
+  max-width: 580px;
   height: 50%;
 }
 #about img{
@@ -145,7 +147,7 @@ h1 {
 .description {
   margin-top: 60px;
   margin-bottom: 60px;
-  width: 50%;
+  width: 70%;
   height: auto;
   padding: 2rem;
   background-color: rgba(0, 0, 0, 0.9);
@@ -160,6 +162,13 @@ h1 {
 }
 .description h1{
   font-size: 3rem;
+}
+
+.linkProjet {
+  position: absolute;
+  bottom: 20px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 #gallery {

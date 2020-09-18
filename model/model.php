@@ -14,7 +14,7 @@ function getArticle($id) {
 function getProject($id) {
 
   $bdd = dbConnect();
-  $project = $bdd->prepare('SELECT name, description, linkImage FROM projet WHERE id = ?');
+  $project = $bdd->prepare('SELECT name, description, linkImage, linkProjet FROM projet WHERE id = ?');
   $project->execute(array($id));
 
   $dataProject = $project->fetch();

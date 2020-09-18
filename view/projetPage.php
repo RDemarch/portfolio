@@ -11,7 +11,15 @@ require('navBar.php');
     </article>
     <div class="boxImageAbout">
     <img class ="imageAboutProjet" src="/portfolio/view<?= $projet['linkImage'] ?>">
+    <?php
+    if ($projet['linkProjet'] != NULL) {
+
+      echo "<p class='linkProjet'>Pour voir le projet cliquez <a href=" . $projet['linkProjet'] . ">ici</a></p>";
+    }
+
+     ?>
     </div>
+
   </section>
 
   <section id="gallery">
@@ -38,17 +46,18 @@ require('navBar.php');
     $i++;
       }
       ?>
+
+    </div>
       <ol class="carousel-indicators">
-    <?php
-      while ($cnt < $i){
-    ?>
-        <li data-target="#carouselExampleCaptions" data-slide-to="<?= $cnt ?>" class="carouselIndicator"></li>
-    <?php
-    $cnt++;
-    }
-    ?>
+      <?php
+        while ($cnt < $i){
+      ?>
+          <li data-target="#carouselExampleCaptions" data-slide-to="<?= $cnt ?>" class="carouselIndicator <?php if($cnt < 1) echo "active";?>"></li>
+      <?php
+      $cnt++;
+      }
+      ?>
       </ol>
-  </div>
-  </div>
+    </div>
   </section>
    <?php include "footer.php"; ?>
